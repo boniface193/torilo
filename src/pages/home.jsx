@@ -1,10 +1,11 @@
 import Button from "../components/buttons";
+import Modal from "../components/modal";
 import Navbar from "../components/navbar";
 
 function Home(params) {
   return (<>
     <Navbar />
-
+<Modal />
     <header>
       <section className="my-5">
         <aside className="container rounded d-flex flex-column align-items-center py-5 bg-light">

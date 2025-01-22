@@ -1,6 +1,13 @@
 import { NavLink } from "react-router";
+import Button from "./buttons";
+import Modal from "./modal";
 
 function Navbar(params) {
+  function handleSubmit (e) {
+    e.preventDefault();
+    console.log('submit');
+  }
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid collapse navbar-collapse">
@@ -32,6 +39,28 @@ function Navbar(params) {
             </li>
           </ul>
         </div>
+
+        <Button showModal={'modal'} triggerModal={'#exampleModal'} title={'Login'} colors={'btn-outline-primary'} />
+        <Modal title={'Login'}>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3 row">
+              <label for="staticEmail" className="col-sm-2 col-form-label">Email</label>
+              <div className="col-sm-10">
+                <input type="text" readonly className="form-control-plaintext" id="staticEmail" value="email@example.com" />
+              </div>
+            </div>
+            <div className="mb-3 row">
+              <label for="inputPassword" className="col-sm-2 col-form-label">Password</label>
+              <div className="col-sm-10">
+                <input type="password" className="form-control" id="inputPassword" />
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" className="btn btn-primary" >Save changes</button>
+            </div>
+          </form>
+        </Modal>
       </div>
     </nav>
   )
