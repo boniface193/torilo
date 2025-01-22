@@ -1,5 +1,10 @@
+import Navbar from "../components/navbar";
+
 function Todo(params) {
-  return (<>this is to do</>)
+  return (<>
+  <Navbar />
+  
+  this is to do</>)
 }
 
 export default Todo;
