@@ -3,7 +3,7 @@ import Button from "./buttons";
 import Modal from "./modal";
 
 function Navbar(params) {
-  function handleSubmit (e) {
+  function handleSubmit(e) {
     e.preventDefault();
     console.log('submit');
   }
@@ -11,10 +11,10 @@ function Navbar(params) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid collapse navbar-collapse">
-        <a className="navbar-brand" href="/">
-          <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
+        <NavLink className="navbar-brand">
+          <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
           Bootstrap
-        </a>
+        </NavLink>
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
@@ -25,11 +25,6 @@ function Navbar(params) {
             <li className="nav-item">
               <NavLink to={'/aboutus'} className="nav-link active" >
                 About
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={'/services'} className="nav-link active" >
-                Services
               </NavLink>
             </li>
             <li className="nav-item">
@@ -44,13 +39,13 @@ function Navbar(params) {
         <Modal title={'Login'}>
           <form onSubmit={handleSubmit}>
             <div className="mb-3 row">
-              <label for="staticEmail" className="col-sm-2 col-form-label">Email</label>
+              <label htmlFor="staticEmail" className="col-sm-2 col-form-label">Email</label>
               <div className="col-sm-10">
-                <input type="text" readonly className="form-control-plaintext" id="staticEmail" value="email@example.com" />
+                <input type="text" readOnly className="form-control-plaintext" id="staticEmail" value="email@example.com" />
               </div>
             </div>
             <div className="mb-3 row">
-              <label for="inputPassword" className="col-sm-2 col-form-label">Password</label>
+              <label htmlFor="inputPassword" className="col-sm-2 col-form-label">Password</label>
               <div className="col-sm-10">
                 <input type="password" className="form-control" id="inputPassword" />
               </div>
